@@ -13,33 +13,38 @@ public class Main {
     public void exibirMenuPrincipal() {
         boolean rodando = true;
         while (rodando) {
-            System.out.println("\nMenu Principal:");
-            System.out.println("1. Aluno");
-            System.out.println("2. Professor");
-            System.out.println("3. Curso");
-            System.out.println("4. Relatórios");
-            System.out.println("5. Sair");
-            int escolha = scanner.nextInt();
-            scanner.nextLine();  // Consumir o enter
+            try {
+                System.out.println("\nMenu Principal:");
+                System.out.println("1. Aluno");
+                System.out.println("2. Professor");
+                System.out.println("3. Curso");
+                System.out.println("4. Relatórios");
+                System.out.println("5. Sair");
+                System.out.print("Escolha uma opção: ");
+                int escolha = Integer.parseInt(scanner.nextLine());
 
-            switch (escolha) {
-                case 1:
-                    menuAluno();
-                    break;
-                case 2:
-                    menuProfessor();
-                    break;
-                case 3:
-                    menuCurso();
-                    break;
-                case 4:
-                    menuRelatorios();
-                    break;
-                case 5:
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+                switch (escolha) {
+                    case 1:
+                        menuAluno();
+                        break;
+                    case 2:
+                        menuProfessor();
+                        break;
+                    case 3:
+                        menuCurso();
+                        break;
+                    case 4:
+                        menuRelatorios();
+                        break;
+                    case 5:
+                        rodando = false;
+                        System.out.println("Fechando programa...");
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número correspondente às opções do menu.");
             }
         }
     }
@@ -47,25 +52,29 @@ public class Main {
     public void menuAluno() {
         boolean rodando = true;
         while (rodando) {
-            System.out.println("\nMenu Aluno:");
-            System.out.println("1. Cadastrar aluno");
-            System.out.println("2. Consultar aluno");
-            System.out.println("3. Sair");
-            int escolha = scanner.nextInt();
-            scanner.nextLine();  // Consumir o enter
+            try {
+                System.out.println("\nMenu Aluno:");
+                System.out.println("1. Cadastrar aluno");
+                System.out.println("2. Consultar aluno");
+                System.out.println("3. Sair");
+                System.out.print("Escolha uma opção: ");
+                int escolha = Integer.parseInt(scanner.nextLine());
 
-            switch (escolha) {
-                case 1:
-                    cadastrarAluno();
-                    break;
-                case 2:
-                    consultarAluno();
-                    break;
-                case 3:
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+                switch (escolha) {
+                    case 1:
+                        cadastrarAluno();
+                        break;
+                    case 2:
+                        consultarAluno();
+                        break;
+                    case 3:
+                        rodando = false;
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número correspondente às opções do menu.");
             }
         }
     }
@@ -135,25 +144,29 @@ public class Main {
     public void menuProfessor() {
         boolean rodando = true;
         while (rodando) {
-            System.out.println("\nMenu Professor:");
-            System.out.println("1. Cadastrar professor");
-            System.out.println("2. Consultar professor");
-            System.out.println("3. Sair");
-            int escolha = scanner.nextInt();
-            scanner.nextLine(); // Consumir o enter
+            try {
+                System.out.println("\nMenu Professor:");
+                System.out.println("1. Cadastrar professor");
+                System.out.println("2. Consultar professor");
+                System.out.println("3. Sair");
+                System.out.print("Escolha uma opção: ");
+                int escolha = Integer.parseInt(scanner.nextLine());
 
-            switch (escolha) {
-                case 1:
-                    cadastrarProfessor();
-                    break;
-                case 2:
-                    consultarProfessor();
-                    break;
-                case 3:
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+                switch (escolha) {
+                    case 1:
+                        cadastrarProfessor();
+                        break;
+                    case 2:
+                        consultarProfessor();
+                        break;
+                    case 3:
+                        rodando = false;
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número correspondente às opções do menu.");
             }
         }
     }
@@ -199,7 +212,6 @@ public class Main {
                         professor.setNome(scanner.nextLine());
                         System.out.print("Nova especialidade: ");
                         professor.setEspecialidade(scanner.nextLine());
-                        scanner.nextLine();
                         System.out.println("Professor atualizado com sucesso!");
                         break;
                     case 2:
@@ -224,37 +236,40 @@ public class Main {
     public void menuCurso() {
         boolean rodando = true;
         while (rodando) {
-            System.out.println("\nMenu Curso:");
-            System.out.println("1. Cadastrar curso");
-            System.out.println("2. Consultar curso");
-            System.out.println("3. Vincular alunos ou professores");
-            System.out.println("4. Desvincular aluno");
-            System.out.println("5. Sair");
-            int escolha = scanner.nextInt();
-            scanner.nextLine(); // Consumir o enter
+            try {
+                System.out.println("\nMenu Curso:");
+                System.out.println("1. Cadastrar curso");
+                System.out.println("2. Consultar curso");
+                System.out.println("3. Vincular alunos ou professores");
+                System.out.println("4. Desvincular aluno");
+                System.out.println("5. Sair");
+                System.out.print("Escolha uma opção: ");
+                int escolha = Integer.parseInt(scanner.nextLine());
 
-            switch (escolha) {
-                case 1:
-                    cadastrarCurso();
-                    break;
-                case 2:
-                    consultarCurso();
-                    break;
-                case 3:
-                    vincular();
-                    break;
-                case 4:
-                    desvincularAluno();
-                    break;
-                case 5:
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+                switch (escolha) {
+                    case 1:
+                        cadastrarCurso();
+                        break;
+                    case 2:
+                        consultarCurso();
+                        break;
+                    case 3:
+                        vincular();
+                        break;
+                    case 4:
+                        desvincularAluno();
+                        break;
+                    case 5:
+                        rodando = false;
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número correspondente às opções do menu.");
             }
         }
     }
-
 
     private void cadastrarCurso() {
         System.out.println("\nCadastro de Curso:");
@@ -328,8 +343,8 @@ public class Main {
     }
 
     private void vincular() {
-        System.out.println("\nVinculação de Estudantes ou Professores:");
-        System.out.println("1. Matricular Estudantes");
+        System.out.println("\nVinculação de Alunos ou Professores:");
+        System.out.println("1. Matricular Alunos");
         System.out.println("2. Associar Professores");
         int escolha = scanner.nextInt();
         scanner.nextLine(); // Consumir o enter
@@ -347,6 +362,11 @@ public class Main {
     }
 
     private void matricularEstudantes() {
+        if (cursos.isEmpty()) {
+            System.out.println("Nenhum curso cadastrado. Cadastre um curso antes de matricular alunos.");
+            return;
+        }
+
         System.out.println("\nEscolha o curso para matrícula:");
         for (int i = 0; i < cursos.size(); i++) {
             System.out.println((i + 1) + ". " + cursos.get(i).getNomeCurso());
@@ -356,9 +376,14 @@ public class Main {
         scanner.nextLine(); // Consumir o enter
 
         if (cursoIndex >= 0 && cursoIndex < cursos.size()) {
-            cursos.get(cursoIndex);
+            Curso curso = cursos.get(cursoIndex);
 
-            System.out.println("Escolha o estudante para matrícula:");
+            if (estudantes.isEmpty()) {
+                System.out.println("Nenhum aluno cadastrado. Cadastre um aluno antes de realizar a matrícula.");
+                return;
+            }
+
+            System.out.println("Escolha o aluno para matrícula:");
             for (int i = 0; i < estudantes.size(); i++) {
                 System.out.println((i + 1) + ". " + estudantes.get(i).getNome());
             }
@@ -367,10 +392,13 @@ public class Main {
             scanner.nextLine(); // Consumir o enter
 
             if (estudanteIndex >= 0 && estudanteIndex < estudantes.size()) {
-                // Lógica de matrícula (associar estudante ao curso)
-                System.out.println("Estudante matriculado com sucesso!");
+                Estudante estudante = estudantes.get(estudanteIndex);
+
+                // Vincula o estudante ao curso
+                curso.getEstudantesMatriculados().add(estudante);
+                System.out.println("Aluno matriculado com sucesso no curso " + curso.getNomeCurso() + "!");
             } else {
-                System.out.println("Estudante inválido.");
+                System.out.println("Aluno inválido.");
             }
         } else {
             System.out.println("Curso inválido.");
@@ -378,6 +406,16 @@ public class Main {
     }
 
     private void associarProfessores() {
+        if (cursos.isEmpty()) {
+            System.out.println("Nenhum curso cadastrado. Cadastre um curso antes de associar professores.");
+            return;
+        }
+
+        if (professores.isEmpty()) {
+            System.out.println("Nenhum professor cadastrado. Cadastre um professor antes de realizar esta operação.");
+            return;
+        }
+
         System.out.println("\nEscolha o curso para associar um professor:");
         for (int i = 0; i < cursos.size(); i++) {
             System.out.println((i + 1) + ". " + cursos.get(i).getNomeCurso());
@@ -419,7 +457,6 @@ public class Main {
             System.out.println("Curso inválido.");
         }
     }
-
     
     private void desvincularAluno() {
         System.out.println("\nEscolha o curso do qual deseja desvincular um aluno:");
@@ -463,29 +500,33 @@ public class Main {
     private void menuRelatorios() {
         boolean rodando = true;
         while (rodando) {
-            System.out.println("\nRelatórios:");
-            System.out.println("1. Lista de alunos");
-            System.out.println("2. Lista de professores");
-            System.out.println("3. Lista de cursos");
-            System.out.println("4. Voltar");
-            int escolha = scanner.nextInt();
-            scanner.nextLine(); // Consumir o enter
+            try {
+                System.out.println("\nRelatórios:");
+                System.out.println("1. Lista de alunos");
+                System.out.println("2. Lista de professores");
+                System.out.println("3. Lista de cursos");
+                System.out.println("4. Voltar");
+                System.out.print("Escolha uma opção: ");
+                int escolha = Integer.parseInt(scanner.nextLine());
 
-            switch (escolha) {
-                case 1:
-                    exibirRelatorioAlunos();
-                    break;
-                case 2:
-                    exibirRelatorioProfessores();
-                    break;
-                case 3:
-                    exibirRelatorioCursos();
-                    break;
-                case 4:
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
+                switch (escolha) {
+                    case 1:
+                        exibirRelatorioAlunos();
+                        break;
+                    case 2:
+                        exibirRelatorioProfessores();
+                        break;
+                    case 3:
+                        exibirRelatorioCursos();
+                        break;
+                    case 4:
+                        rodando = false;
+                        break;
+                    default:
+                        System.out.println("Opção inválida. Tente novamente.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, digite um número correspondente às opções do menu.");
             }
         }
     }
